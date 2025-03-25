@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Ensure the wrapper for the horizontal navigation is set to flex */
+.horizontal-nav {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Center the navigation horizontally */
+  padding: 10px 0;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* The overall navigation container should be set to flex as well */
+.react-minimal-side-navigation {
+  display: flex !important; /* Force the navigation items to be displayed in a row */
+  flex-direction: row; /* Arrange items horizontally */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Center the items vertically */
+  width: 100%;
+  flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+}
+
+/* Styling for main navigation items */
+.react-minimal-side-navigation__item {
+  display: inline-flex; /* Display each item horizontally */
+  margin-right: 20px; /* Add spacing between items */
+  cursor: pointer; /* Make items clickable */
+  align-items: center; /* Vertically center the icon and label */
+}
+
+/* Remove right margin for the last item */
+.react-minimal-side-navigation__item:last-child {
+  margin-right: 0;
+}
+
+/* Adjust spacing between icon and label */
+.react-minimal-side-navigation__item .react-minimal-side-navigation__item-label {
+  margin-left: 8px;
+}
+
+/* Active item styling */
+.react-minimal-side-navigation__item .react-minimal-side-navigation__item-active {
+  background-color: #007bff; /* Background color for active item */
+  color: white; /* Text color for active item */
+}
+
+/* Style sub-navigation to be horizontal under parent items */
+.react-minimal-side-navigation__sub-nav {
+  display: flex; /* Align sub-nav items horizontally */
+  flex-direction: row; /* Arrange sub-nav items horizontally */
+  margin-left: 20px; /* Add space between parent and sub-nav */
+  align-items: center; /* Vertically align sub-nav items */
+}
+
+/* Style for sub-nav items */
+.react-minimal-side-navigation__sub-nav .react-minimal-side-navigation__item {
+  margin-right: 15px; /* Add space between sub-nav items */
+  display: inline-flex; /* Ensure sub-nav items are horizontally arranged */
+  align-items: center; /* Vertically center the icons and labels */
+}
+
+/* Ensure sub-nav items are inline with the parent */
+.react-minimal-side-navigation__sub-nav .react-minimal-side-navigation__item > div {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for items */
+.react-minimal-side-navigation__item:hover {
+  background-color: #555; /* Background color on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hover effect for sub-nav items */
+.react-minimal-side-navigation__sub-nav .react-minimal-side-navigation__item:hover {
+  background-color: #444; /* Darker hover color for sub-items */
 }
